@@ -6,7 +6,6 @@ def get_link ():
 	html = str(bing.read())
 	postion1 = html.find('href="/')
 	postion2 = html.find('" as="image"') #获取壁纸链接
-        global link
 	link = 'https://www.bing.com' + html[postion1 + 6:postion2]
 
 def download (link):
@@ -14,13 +13,11 @@ def download (link):
 	image = bg.read()
 	f = open('Bingimage' + str(time.localtime()[0]) + str(time.localtime()[1]) + str(time.localtime()[2]) + '.jpg','wb')
 	f.write(image)
-        f.close()
 
 def start ():
     try:
         get_link()
         download(link)
-    except:
-        OSError as error:
+    except OSError as error:
             print(error)
             get_link()
