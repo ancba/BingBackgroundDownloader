@@ -13,7 +13,7 @@ def download (path):
     bg = request.urlopen(link)
     image = bg.read()
     #判断路径
-    if path == '0':
+    if path == 0 or path == '0':
         f = open('Bingimage' + str(time.localtime()[0]) + str(time.localtime()[1]) + str(time.localtime()[2]) + '.jpg','wb')
         f.write(image)
         f.close()

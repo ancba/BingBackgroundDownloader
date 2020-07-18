@@ -1,5 +1,5 @@
-import get_image
 import json
+import get_image
 
 if __name__ == '__main__':
     try:
@@ -10,4 +10,5 @@ if __name__ == '__main__':
         f.close()
         f = open('config.json')
     js = json.load(f)
-    get_image.start(js['path'])
+    path = js['path']
+    get_image.start(path)
