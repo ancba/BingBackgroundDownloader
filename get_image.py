@@ -7,6 +7,7 @@ def get_link ():
     postion1 = html.find('href="/')
     postion2 = html.find('" as="image"') #获取壁纸链接两端位置
     link = 'https://www.bing.com' + html[postion1 + 6:postion2] #合成链接
+    print (link)
     return link
 
 def download (path,link):
