@@ -1,4 +1,5 @@
 import time
+import json
 import urllib.request as request
 
 def get_link ():
@@ -28,3 +29,13 @@ def start (path=0):
     except OSError as error:
          print(error)
          exit()
+
+if __name__ == '__main__':
+    try:
+        f = open('config.json')    
+        js = json.load(f)
+        path = js['path']
+    except OSError:
+        path = 0
+
+    get_image.start(path)
